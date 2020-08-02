@@ -22,12 +22,12 @@ Vue.use(VueRouter)
     {
       path: '/cart',
       name: 'cart',
-      component: () => import('views/cart/Swiper.vue')
+      component: () => import('views/cart/cart.vue')
     },
     {
       path: '/category',
       name: 'category',
-      component: () => import('views/category/Swiper.vue')
+      component: () => import('views/category/category.vue')
     },
 ]
 

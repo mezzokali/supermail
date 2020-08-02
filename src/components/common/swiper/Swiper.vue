@@ -36,7 +36,7 @@
     props: {
       interval: {
         type: Number,
-        default: 3000
+        default: 5000
       },
       animDuration: {
         type: Number,
@@ -92,14 +92,16 @@
       }
     },
     mounted() {
-      this.handleDom()
-      this.startTimer()
-      window.addEventListener("blur", () => {
-        this.stopTimer()
-      })
-      window.addEventListener("focus", () => {
+      setTimeout(() => {
+        this.handleDom()
         this.startTimer()
-      })
+        window.addEventListener("blur", () => {
+          this.stopTimer()
+        })
+        window.addEventListener("focus", () => {
+          this.startTimer()
+        })
+      },500)
     }
   }
 </script>

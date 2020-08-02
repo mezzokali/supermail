@@ -12,11 +12,10 @@ name: "SwiperItem"
 
 <style scoped>
   .swiper-item {
-    flex: 1;
     width: 100%;
     flex-shrink: 0;
   }
-  img {
+  .swiper-item img {
     width: 100%;
   }
 </style>
