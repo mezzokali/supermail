@@ -36,6 +36,7 @@
   .content {
     display: inline-block;
     color: #000000;
+    text-decoration: none;
   }
   .recommend-item img {
     width: 80%;
