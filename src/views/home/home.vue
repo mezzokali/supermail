@@ -29,6 +29,7 @@
   import Scroll from "@/components/common/scroll/Scroll";
 
   import { getHomeMultidata, getHomeGoods } from "@/network/home";
+  import { debounce } from "@/common/utils";
 
 
   export default {
@@ -102,16 +103,6 @@
         }).catch(err => {
           console.log(err);
         })
-      },
-      // 防抖动
-      bounce(func, delay) {
-        let timer = null
-        return function (...args) {
-          if (timer) clearTimeout(timer)
-          timer = setTimeout(() => {
-            func.apply(this, args)
-          }, delay)
-        }
       }
     },
     created() {
@@ -121,7 +112,7 @@
       this.getHomeGoods('sell')
     },
     mounted() {
-      const refresh = this.bounce(this.$refs.scroll.refresh, 50)
+      const refresh = debounce(this.$refs.scroll.refresh, 50)
       this.$bus.$on('itemImageLoad',() => {
         refresh()
       })

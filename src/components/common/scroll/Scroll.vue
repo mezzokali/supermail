@@ -35,7 +35,6 @@
         this.bs && this.bs.finishPullUp()
       },
       refresh() {
-        console.log('refrash')
         this.bs && this.bs.refresh()
       }
     },
